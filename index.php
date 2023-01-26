@@ -1,41 +1,53 @@
 <?php
 
 class Salary{
-  private $wage;
-  private $iban;
+  private $month;
+  private $terteenth;
+  private $fourteenth;
 
-  public function __construct($wage, $iban){
-    $this -> setWage($wage);
-    $this -> setIban($iban);
+  public function __construct($month, $terteenth, $fourteenth){
+    $this -> setMonth($month);
+    $this -> setTerteenth($terteenth);
+    $this -> setFourteenth($fourteenth);
   } 
 
-  // Wage
-  public function getWage(){
-    return $this -> wage;
+  // Month
+  public function getMonth(){
+    return $this -> month;
   }
-  public function setWage($wage){
-    $this -> wage = $wage;
-  }
-
-  // Iban
-  public function getIban(){
-    return $this -> iban;
-  }
-  public function setIban($iban){
-    $this -> iban = $iban;
+  public function setMonth($month){
+    $this -> month = $month;
   }
 
+  // Terteenth
+  public function getTerteenth(){
+    return $this -> terteenth;
+  }
+  public function setTerteenth($terteenth){
+    $this -> terteenth = $terteenth;
+  }
+
+  // Fourteenth
+  public function getFourteenth(){
+    return $this -> fourteenth;
+  }
+  public function setFourteenth($fourteenth){
+    $this -> fourteenth = $fourteenth;
+  }
 
   // getHtml WAGE
   public function getHtml(){
-    return $this -> getWage() . "<br>"
-    . $this -> getIban() . "<br>";
+    return $this -> getMonth() . "<br>"
+    . $this -> getTerteenth() . "<br>"
+    . $this -> getFourteenth() . "<br>";
   }
 }
 
 // Instance
   // WAGE
-$wage = new Salary(2000 . "$", "IT8734y28f3g4b38gc83");
+$month = new Salary(2000 . "$", "terteenth", "fourteenth");
 
-echo $wage -> getHtml();
+
+
+echo $month -> getHtml();
 ?>
