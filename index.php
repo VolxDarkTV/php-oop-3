@@ -49,7 +49,8 @@ class Salary{
   public function getHtml(){
     return "<b>Month:</b> " . $this -> getMonth() . "<br>"
     . "<b>terteenth:</b> " . $this -> getTerteenth() . "<br>"
-    . "<b>fourteenth:</b> " . $this -> getFourteenth() . "<br>" . $this -> getSalary();
+    . "<b>fourteenth:</b> " . $this -> getFourteenth() . "<br>" 
+    . $this -> getSalary();
   }
 }
 
@@ -111,7 +112,7 @@ class Person{
       . "<b>Surname:</b> " . $this -> getSurname()  . "<br>"
       . "<b>DateOfBirth:</b> " . $this -> getDateOfBirth()  . "<br>"  
       . "<b>LocOfBirth:</b> " . $this -> getLocOfBirth()  . "<br>" 
-      . "<b>Fiscal Code:</b> " . $this -> getFc()
+      . "<b>Fiscal Code:</b> " . $this -> getFc() 
       . "</div>";
   }
 
@@ -181,11 +182,16 @@ class Boss extends Person{
     $this -> bonus = $bonus;
   }
 
+  public function getBonusDividend(){
+    return ($this -> getDividend() * 12) + $this -> getBonus();
+  }
+
   // getHtml BOSS
   public function getHtml(){
     return  parent :: getHtml()
       . $this -> getDividend() . "<br>"
-      . $this -> getBonus() . "<br>";
+      . $this -> getBonus() . "<br>" 
+      . $this -> getBonusDividend() . "<br>";
   }
 
 }
