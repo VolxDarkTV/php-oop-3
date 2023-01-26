@@ -183,14 +183,14 @@ class Boss extends Person{
   }
 
   public function getBonusDividend(){
-    return ($this -> getDividend() * 12) + $this -> getBonus();
+    return "<b>Annual Income:</b> " . ($this -> getDividend() * 12) + $this -> getBonus();
   }
 
   // getHtml BOSS
   public function getHtml(){
     return  parent :: getHtml()
-      . $this -> getDividend() . "<br>"
-      . $this -> getBonus() . "<br>" 
+      . "<b>Dividend:</b> " . $this -> getDividend() . "<br>"
+      . "<b>Bonus:</b> " . $this -> getBonus() . "<br>" 
       . $this -> getBonusDividend() . "<br>";
   }
 
@@ -198,13 +198,13 @@ class Boss extends Person{
 // Instance
 
   // Salary
-$salary = new Salary(2000, 10, 0);
+  $salary = new Salary(2000, 10, 0);
 
   // Employee
-$employee = new Employee("Tony", "Sanchez", "2003-02-02", "Brindisi", "TO54584THFX", $salary, "2023-01-27");
+  $employee = new Employee("Tony", "Sanchez", "2003-02-02", "Brindisi", "TO54584THFX", $salary, "2023-01-27");
 
   // Boss
-$boss = new Boss("Boss", "Dimitry", "1990-06-01", "Castello Ammare", "BD8473fbri394834GHG", 1700, 200);
+  $boss = new Boss("Boss", "Dimitry", "1990-06-01", "Castello Ammare", "BD8473fbri394834GHG", 1700, 200);
 
 
 
