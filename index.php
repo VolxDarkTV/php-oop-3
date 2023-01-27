@@ -37,12 +37,21 @@ class Salary{
 
 
   public function getSalary(){
-    if($this -> getTerteenth() != 0 || $this -> getFourteenth() != 0){
-      return "<span>" . "<b>Salary per Year:</b> " . ($this -> getMonth() * 12) + $this -> getTerteenth() + $this -> getFourteenth() . "</span>";
-
-    }else{
-      return "no Salary EXTRA";
+    $month = $this -> getMonth();
+    $res = $month * 12;
+    if($this -> getTerteenth()){
+      $res += $month; 
     }
+    if($this -> getFourteenth()){
+      $res += $month;
+    }
+    return $res;
+    // if($this -> getTerteenth() != 0 || $this -> getFourteenth() != 0){
+    //   return "<span>" . "<b>Salary per Year:</b> " . ($this -> getMonth() * 12) + $this -> getTerteenth() + $this -> getFourteenth() . "</span>";
+
+    // }else{
+    //   return "no Salary EXTRA";
+    // }
   }
 
   // getHtml SALARY
@@ -198,7 +207,7 @@ class Boss extends Person{
 // Instance
 
   // Salary
-  $salary = new Salary(2000, 10, 0);
+  $salary = new Salary(1000, true, false);
 
   // Employee
   $employee = new Employee("Tony", "Sanchez", "2003-02-02", "Brindisi", "TO54584THFX", $salary, "2023-01-27");
